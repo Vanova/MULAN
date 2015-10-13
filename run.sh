@@ -14,12 +14,12 @@ steps/compute_cmvn_stats.sh data-fbank data-fbank/log data-fbank
 
 # 2. forward data through the Neural Network and producing scores
 # for manner
-trans=model/manner/fbank_to_splice_cnn4c_1024_2.trans
-nnet=model/manner/cnn4c_1024_2.nnet
+trans=model/manner/fbank_to_splice_cnn4c_128_4.trans
+nnet=model/manner/cnn4c_128_4.nnet
 steps/forward_cnn.sh data-fbank $trans $nnet res/manner
 # for place
-trans=model/place/fbank_to_splice_cnn4c_512_3.trans
-nnet=model/place/cnn4c_512_3.nnet
+trans=model/place/fbank_to_splice_cnn4c_128_9.trans
+nnet=model/place/cnn4c_128_9.nnet
 steps/forward_cnn.sh data-fbank $trans $nnet res/place
 
 echo "[info] attributes scores successfully extracted...";
